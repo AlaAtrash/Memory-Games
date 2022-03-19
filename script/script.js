@@ -188,10 +188,6 @@ function check_card(img) {
     //ajoute les paires bonnea ma liste de carte ok
     List_card_returned.push(img1_selected.id);
 
-    //document.getElementById(img1_selected.id).className =
-    //"mon_image_no_rotation";
-    //document.getElementById(img2_selected.id).className =
-    //"mon_image_no_rotation";
     card_OK += 2;
     img1_selected = "";
     img2_selected = "";
