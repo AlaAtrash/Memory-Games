@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🕹️ Memory Game</title>
+  </head>
+  <body>
+    <script src="script/script.js"></script> 
+  
+    <div class="title_game center-div">
+      <h1 class="my_title"> MEMORY GAME</h1>
+    </div>
+    <div class="time_counter center-div" >
+      <p id="timercounter" ></p>
+    </div>
+    <div class="serie_card">
+      <input id = "starwars" class="button_serie"  type="button" value="Star Wars" onClick="set_serie('starwars')" />
+      <input id = "animaux" class="button_serie" type="button" value="Animaux" onClick="set_serie('animaux')" />
+      <input id = "harrypotter" class="button_serie" type="button" value="Harry Potter" onClick="set_serie('harrypotter')" />
+      <!-- <input  type="button" value="sql" onClick="mysql_connetion()" /> -->
+    </div>
+    <div class="button_start">
+      <input id="buttonstart" type="button" value="Démarrer le jeux" onClick="start_game()" />
+    </div>
+    <div class="line" id="line1">
+      <script type="text/javascript">
+        insert("line1", 0);  
+      </script>
+    </div>
+    <div class="line" id="line2">
+      <script type="text/javascript">
+        insert("line2",6);
+      </script>
+    </div>
+    <div class="line" id="line3">
+      <script type="text/javascript">
+        insert("line3",12);
+      </script>
+    </div>
+    <div class="line" id="line4">
+      <script type="text/javascript">
+        insert("line4",18);
+      </script>
+    </div>
+    <div class="line" id="line5">
+      <script type="text/javascript">
+        insert("line5",24);
+      </script>
+    </div>
+    <div class="line" id="line6">
+      <script type="text/javascript">
+        insert("line6",30);
+      </script>
+    </div>
+    <script type="text/javascript">
+      end_game()
+    </script>
+
+

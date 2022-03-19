@@ -1,0 +1,86 @@
+.time_counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid 2px blue;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.title_game {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: solid 2px red;
+  border-radius: 20px;
+  margin: 5px;
+  width: 400px;
+}
+
+.center-div {
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 400px;
+}
+
+.my_title {
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: orange;
+}
+
+.button_start {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.serie_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10px;
+}
+
+.button_selected {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+  padding: 2px;
+  background-color: rgb(51, 255, 0);
+  border-radius: 10px;
+}
+
+.button_grey {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+  padding: 2px;
+  background-color: rgb(32, 144, 218);
+  border-radius: 10px;
+}
+
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mon_image {
+  padding: 4px;
+  width: 60px;
+  height: 60px;
+  -webkit-transition: -webkit-transform 1s;
+}
+
+.mon_image:hover {
+  -webkit-transform: rotate(20deg) translateZ(0);
+}
+
+/* .mon_image:hover {
+  transform: rotateY(180deg);
+} */
