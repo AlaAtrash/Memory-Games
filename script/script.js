@@ -25,6 +25,13 @@ let timer;
 // par defaut "starwars au demarrage de la page"
 let serie = "starwars";
 
+function removelisten() {
+  for (let pas = 0; pas < 36; pas++) {
+    let img = document.getElementById(pas);
+
+    img.removeEventListener("click", onclickimage);
+  }
+}
 //#########################################
 // _summary_: start_game
 // Démarre ou arrete le jeux
@@ -40,6 +47,7 @@ function start_game() {
   for (let pas = 0; pas < 36; pas++) {
     img = document.getElementById(pas);
     img.src = "images/M.jpg";
+    document.getElementById(img.id).className = "mon_image";
   }
   // reinitialisation des variables au demarrage du jeux
   list_img_deck = [];
@@ -65,8 +73,16 @@ function start_game() {
       end_game();
     }
   }, 1000);
+
+  // $("#0")
+  //   .animate({ left: "+=2000px" }, 1000)
+  //   .animate({ top: "+=50px" }, 400)
+  //   .animate({ left: "-=200px" }, 1000)
+  //   .animate({ top: "-=50px" }, 400);
   //indique que le jeux est demarré
   game_started = true;
+
+  setTimeout(() => removelisten(), 5000);
 }
 
 //######################################################
@@ -133,9 +149,17 @@ function insert(lineid, imgstart) {
 // la fonction "clickimage"
 //######################################################
 function Bind_On_Click() {
+  console.log("bind");
   for (let pas = 0; pas < 36; pas++) {
     var imgcreated = document.getElementById(pas);
     imgcreated.addEventListener("click", onclickimage);
+  }
+}
+
+function returnall() {
+  for (let pas = 0; pas < 36; pas++) {
+    img = document.getElementById(pas);
+    img.src = "images/" + serie + "/" + list_img_deck[pas] + ".jpg";
   }
 }
 
@@ -146,12 +170,21 @@ function Bind_On_Click() {
 // et l'envoie a la fonction check_card
 //######################################################
 function onclickimage(e) {
+  console.log($("#test").attr("style"));
+  console.log($("#test").prop("style"));
+  console.log($("#test").prop("style")["font-size"]);
+  console.log($("#test").prop("class"));
+  console.log($("#test").attr("class"));
+
   if (game_started) {
     var img = e.target;
     if (List_card_returned.includes(img.id)) {
       return;
     }
+    $("#" + img.id).fadeOut(200);
     img.src = "images/" + serie + "/" + list_img_deck[img.id] + ".jpg";
+    $("#" + img.id).fadeIn(200);
+    //$("#" + img.id).animate({ height: "80", width: "80px" });
     check_card(img);
   }
 }
@@ -187,8 +220,10 @@ function check_card(img) {
   } else {
     //ajoute les paires bonnea ma liste de carte ok
     List_card_returned.push(img1_selected.id);
-
     card_OK += 2;
+    console.log("yessss");
+    $("#" + img1_selected.id).animate({ height: "60px", width: "60px" });
+    $("#" + img2_selected.id).animate({ height: "60px", width: "60px" });
     img1_selected = "";
     img2_selected = "";
   }
@@ -202,8 +237,12 @@ function check_card(img) {
 // set les images retournées a l'image par defaut
 // cas paire non identique
 function setimage_default(img1, img2) {
+  //document.getElementById(img1.id).style.transform = "rotateY(-180deg)";
   img1.src = "images/M.jpg";
+  $("#" + img1.id).animate({ height: "60px", width: "60px" });
+  //document.getElementById(img2.id).style.transform = "rotateY(-180deg)";
   img2.src = "images/M.jpg";
+  $("#" + img2.id).animate({ height: "60px", width: "60px" });
 }
 
 // choix des carte en fonction de la serie

@@ -74,11 +74,14 @@
   padding: 4px;
   width: 60px;
   height: 60px;
-  -webkit-transition: -webkit-transform 1s;
+  /* -webkit-transition: -webkit-transform 1s; */
 }
 
 .mon_image:hover {
-  -webkit-transform: rotate(20deg) translateZ(0);
+  padding: 4px;
+  width: 60px;
+  height: 60px;
+  /* -webkit-transform: rotate(20deg) translateZ(0); */
 }
 
 /* .mon_image:hover {
