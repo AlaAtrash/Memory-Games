@@ -82,7 +82,7 @@ function start_game() {
   //indique que le jeux est demarré
   game_started = true;
 
-  setTimeout(() => removelisten(), 5000);
+  //setTimeout(() => removelisten(), 5000);
 }
 
 //######################################################
