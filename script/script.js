@@ -98,6 +98,7 @@ function set_serie(ser) {
   document.getElementById("animaux").className = "button_grey";
   document.getElementById("starwars").className = "button_grey";
   document.getElementById("harrypotter").className = "button_grey";
+  document.getElementById("poulpy").className = "button_grey";
   var btn = document.getElementById(serie);
   btn.className = "button_selected";
 }
@@ -112,6 +113,7 @@ function end_game() {
   document.getElementById("animaux").className = "button_grey";
   document.getElementById("starwars").className = "button_grey";
   document.getElementById("harrypotter").className = "button_grey";
+  document.getElementById("poulpy").className = "button_grey";
   var btn = document.getElementById(serie);
   btn.className = "button_selected";
 
@@ -239,10 +241,10 @@ function check_card(img) {
 function setimage_default(img1, img2) {
   //document.getElementById(img1.id).style.transform = "rotateY(-180deg)";
   img1.src = "images/M.jpg";
-  $("#" + img1.id).animate({ height: "60px", width: "60px" });
+  //$("#" + img1.id).animate({ height: "80px", width: "80px" });
   //document.getElementById(img2.id).style.transform = "rotateY(-180deg)";
   img2.src = "images/M.jpg";
-  $("#" + img2.id).animate({ height: "60px", width: "60px" });
+  //$("#" + img2.id).animate({ height: "80px", width: "80px" });
 }
 
 // choix des carte en fonction de la serie
