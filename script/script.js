@@ -42,11 +42,11 @@ function start_game() {
     end_game();
     return;
   }
-  // set toutes les cartes avec l'image M.jpg
+  // set toutes les cartes avec l'image M.png
   var img;
   for (let pas = 0; pas < 36; pas++) {
     img = document.getElementById(pas);
-    img.src = "images/M.jpg";
+    img.src = "images/M.png";
     document.getElementById(img.id).className = "mon_image";
   }
   // reinitialisation des variables au demarrage du jeux
@@ -139,7 +139,7 @@ function insert(lineid, imgstart) {
     var img = document.createElement("img");
     img.setAttribute("class", "mon_image");
     img.setAttribute("id", pas);
-    img.src = "images/M.jpg";
+    img.src = "images/M.png";
     img.alt = "img" + pas;
     src.appendChild(img);
   }
@@ -184,7 +184,14 @@ function onclickimage(e) {
       return;
     }
     $("#" + img.id).fadeOut(200);
-    img.src = "images/" + serie + "/" + list_img_deck[img.id] + ".jpg";
+    if (serie=="poulpy")
+    {
+      img.src = "images/" + serie + "/" + list_img_deck[img.id] + ".png";
+    }
+    else
+    {
+      img.src = "images/" + serie + "/" + list_img_deck[img.id] + ".jpg";
+    }
     $("#" + img.id).fadeIn(200);
     //$("#" + img.id).animate({ height: "80", width: "80px" });
     check_card(img);
@@ -224,8 +231,8 @@ function check_card(img) {
     List_card_returned.push(img1_selected.id);
     card_OK += 2;
     console.log("yessss");
-    $("#" + img1_selected.id).animate({ height: "60px", width: "60px" });
-    $("#" + img2_selected.id).animate({ height: "60px", width: "60px" });
+    // $("#" + img1_selected.id).animate({ height: "60px", width: "60px" });
+    // $("#" + img2_selected.id).animate({ height: "60px", width: "60px" });
     img1_selected = "";
     img2_selected = "";
   }
@@ -240,10 +247,10 @@ function check_card(img) {
 // cas paire non identique
 function setimage_default(img1, img2) {
   //document.getElementById(img1.id).style.transform = "rotateY(-180deg)";
-  img1.src = "images/M.jpg";
+  img1.src = "images/M.png";
   //$("#" + img1.id).animate({ height: "80px", width: "80px" });
   //document.getElementById(img2.id).style.transform = "rotateY(-180deg)";
-  img2.src = "images/M.jpg";
+  img2.src = "images/M.png";
   //$("#" + img2.id).animate({ height: "80px", width: "80px" });
 }
 

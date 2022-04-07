@@ -71,6 +71,8 @@
   margin-right: 5px;
 }
 .mon_image {
+  border: solid 5px rgba(0, 0, 0, 0);
+  background-color: rgba(255, 255, 255, 0);
   padding: 4px;
   width: 80px;
   height: 80px;
